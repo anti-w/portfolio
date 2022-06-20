@@ -12,6 +12,7 @@ html {
 }
 
 body {
-  background: ${({ theme }) => theme.colors.primary}
+  background: ${({ theme }) => theme.colors.background}
 }
+
 `;
