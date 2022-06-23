@@ -1,11 +1,12 @@
-import { Description } from '../components/Description';
-import { Title } from '../components/Title';
+import { AboutMe } from '../components/AboutMe';
+import { Menu } from '../components/Menu';
+import * as Styled from './styles.js';
 
 export const Home = () => {
   return (
-    <div>
-      <Title />
-      <Description />
-    </div>
+    <Styled.Container>
+      <Menu />
+      <AboutMe />
+    </Styled.Container>
   );
 };

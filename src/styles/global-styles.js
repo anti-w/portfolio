@@ -12,7 +12,10 @@ html {
 }
 
 body {
-  background: ${({ theme }) => theme.colors.background}
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.family.header};
 }
+
 
 `;
