@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
-  border-radius: 15% 85% 53% 47% / 27% 33% 67% 73% ;
+  border-radius: 10px;
   background: ${theme.colors.lightBg}; }
 
   img {

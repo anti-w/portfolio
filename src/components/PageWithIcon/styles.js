@@ -37,3 +37,10 @@ export const TitleAndIcon = styled.button`
 
   `}
 `;
+
+export const Psedo = styled.div`
+  ${({ theme }) => css`
+
+  border-radius: 15% 85% 53% 47% / 27% 33% 67% 73%
+  `}
+`;

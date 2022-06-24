@@ -8,7 +8,7 @@ export const Home = () => {
     {
       title: 'Sobre mim',
       icon: 'about',
-      selected: false,
+      selected: true,
     },
     {
       title: 'Habilidades',
@@ -22,7 +22,7 @@ export const Home = () => {
     },
   ]);
 
-  const [selectedPage, setSelectedPage] = useState('about');
+  const [selectedPage, setSelectedPage] = useState('Sobre mim');
 
   const handleSelectedPage = (title) => {
     setSelectedPage(title);

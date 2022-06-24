@@ -13,8 +13,20 @@ html {
 
 .selected {
   background: ${({ theme }) => theme.colors.background};
-  color: white
+  color: white;
 }
+
+.selected::after {
+  content: '-';
+  display: flex;
+  position: absolute;
+
+  left: 19.1rem;
+  width: 4.2rem;
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.background};
+}
+
 
 body {
   background: ${({ theme }) => theme.colors.background};

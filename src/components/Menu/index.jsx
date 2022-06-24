@@ -15,7 +15,7 @@ export const Menu = ({ pages, handleSelectedPage }) => {
   return (
     <Styled.Container>
       <header>
-        <img src="https://cdn-icons.flaticon.com/png/512/924/premium/924915.png?token=exp=1656004840~hmac=238e16b47b9649e11d798caf01402936" />
+        <img src="https://res.cloudinary.com/dscztnlqq/image/upload/v1656099031/portfolio/924915_euttiy.png" />
         <h1>@antiw</h1>
       </header>
       <nav>
