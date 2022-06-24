@@ -11,7 +11,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
-  border-radius: 10px;
+  border-radius: 15% 85% 53% 47% / 27% 33% 67% 73% ;
   background: ${theme.colors.lightBg}; }
 
   img {
@@ -40,42 +40,7 @@ export const PagesContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  border: 1px solid gray;
-  border-radius: 10px;
   padding: 1rem;
-
-  a {
-    display: flex;
-    width: 16.4rem;
-    color: ${theme.colors.background};
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    padding: 16px 8px;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    border: 1px solid gray;
-    border-radius: 10px;
-
-    img {
-      width: 3.5rem;
-
-    }
-
-    h2 {
-      text-align: left;
-      width: 8rem;
-      margin-left: 2rem;
-    }
-
-
-  }
-
-  a:hover {
-    background: ${theme.colors.background};
-    color: white;
-    transition: ease-in-out 500ms
-  }
 
   `}
 `;
@@ -83,18 +48,34 @@ export const SocialIconsContainer = styled.div`
   ${({ theme }) => css`
 
   display: flex;
-  justify-content: center ;
+  justify-content: center;
+  align-items: center;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  gap: 2rem;
 
-  `}
-`;
 
-export const Icon = styled.img`
-  ${({ theme }) => css`
 
-  src: 'ttps://res.cloudinary.com/dscztnlqq/image/upload/v1656006491/portfolio/62898_pd8xlr.png';
-  width: 64px;
+  a {
+    background: ${theme.colors.lightBg};
+    border-radius: 10px;
+    padding: 0.3rem;
+    cursor: pointer;
+
+    svg {
+      color: ${theme.colors.background};
+    }
+  }
+
+
+
+  a:hover {
+    background: ${theme.colors.background};
+
+    svg {
+      color: white;
+    }
+  }
 
   `}
 `;

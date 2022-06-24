@@ -11,6 +11,11 @@ html {
     scroll-behavior: smooth
 }
 
+.selected {
+  background: ${({ theme }) => theme.colors.background};
+  color: white
+}
+
 body {
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.primary};
