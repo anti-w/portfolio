@@ -1,4 +1,4 @@
-import { Barcode, Hamburger } from 'phosphor-react';
+import { Hamburger } from 'phosphor-react';
 
 import TypeAnimation from 'react-type-animation';
 import * as Styled from './styles';
@@ -16,11 +16,10 @@ export const AboutMe = () => {
           ]}
         />
         <p>
-          Tenho 27 anos, sou de uma pequena cidade do interior de São Paulo
-          chamada Quintana. Desde meus 10 anos eu mexo com computadores e busco
-          na tecnologia uma maneira de me expressar, mostrar quem eu sou e do
-          que sou capaz. E foi assim que me apaixonei e me tornei um
-          desenvolvedor.
+          27 anos, sou de Quintana - SP e desenvolver pra mim é uma forma de
+          expressar quem eu sou, ideias, projetos, solucionar problemas (nem
+          todos eles), mas persistir, acreditar, pesquisar e tentar até dar
+          certo.
         </p>
       </Styled.ResumeContainer>
 
