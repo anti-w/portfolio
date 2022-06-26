@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const CardsContainer = styled.div`
   ${({ theme }) => css`
-  display: grid;
-  width: 100%;
-  height: 100%;
-  padding: 3.2rem;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  padding: 3rem;
+
+
   `}
 `;
 
@@ -19,23 +20,29 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 4.2rem;
   `}
 `;
 
-export const TagsContainer = styled.div`
+export const Container = styled.div`
   ${({ theme }) => css`
 
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${theme.colors.lightBg};
-  border-radius: 30px;
-  width: 37.5rem;
-  height: 27.5rem;
-    box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 2.8rem;
+  `}
+`;
 
-  padding-bottom: 2rem;
+export const FilterContainer = styled.div`
+  ${({ theme }) => css`
+
+  display: flex;
+  flex-direction: column;
+
   `}
 `;
 
@@ -48,5 +55,6 @@ export const TitleWithIcon = styled.div`
   gap: 4.2rem;
   width: 100%;
   height: 20%;
+  font-size: 14px;
   `}
 `;
