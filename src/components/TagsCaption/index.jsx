@@ -7,7 +7,7 @@ export const TagsCaption = () => {
     {
       title: 'Aprenderei',
       level: 'will learn',
-      isSelected: false,
+      isSelected: true,
     },
     {
       title: 'Aprendendo',
@@ -22,13 +22,14 @@ export const TagsCaption = () => {
   ]);
 
   const handleSelectedSkill = (title) => {
-    setTags(
-      tags.map((tag) => {
-        if (title === tag.title) {
-          tag.isSelected = true;
-        }
-      }),
-    );
+    const tagsSelected = tags.map((tag) => {
+      if (title === tag.title) {
+        tag.isSelected = !tag.isSelected;
+      }
+      return tag;
+    });
+
+    setTags(tagsSelected);
   };
   return (
     <Styled.Container>
