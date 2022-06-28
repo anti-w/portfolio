@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import { SkillHash } from '../SkillHash';
 import * as Styled from './styles';
+import P from 'prop-types';
+import { useState } from 'react';
 
-export const TagsCaption = () => {
+import { SkillHash } from '../SkillHash';
+
+export const TagsCaption = ({ filterSkillsByLevel }) => {
   const [tags, setTags] = useState([
     {
       title: 'Aprenderei',
@@ -35,7 +37,10 @@ export const TagsCaption = () => {
     <Styled.Container>
       {tags.map((tag) => (
         <Styled.Caption
-          onClick={() => handleSelectedSkill(tag.title)}
+          onClick={() => {
+            filterSkillsByLevel(tag.level);
+            handleSelectedSkill(tag.title);
+          }}
           key={tag.title}
           isSelected={tag.isSelected}
         >
@@ -48,4 +53,8 @@ export const TagsCaption = () => {
       ))}
     </Styled.Container>
   );
+};
+
+TagsCaption.propTypes = {
+  filterSkillsByLevel: P.func.isRequired,
 };

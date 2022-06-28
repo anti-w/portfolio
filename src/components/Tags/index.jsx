@@ -6,21 +6,20 @@ export const Tags = ({ skillsData }) => {
   return (
     <Styled.Container>
       {skillsData.map((skill) => {
-        return (
-          <SkillHash
-            title={skill.title}
-            level={skill.level}
-            key={skill.title}
-          />
-        );
+        if (skill.selected) {
+          return (
+            <SkillHash
+              title={skill.title}
+              level={skill.level}
+              key={skill.title}
+            />
+          );
+        }
       })}
     </Styled.Container>
   );
 };
 
 Tags.propTypes = {
-  skillsData: P.arrayOf({
-    title: P.string.isRequired,
-    level: P.string,
-  }),
+  skillsData: P.array,
 };

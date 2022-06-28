@@ -38,8 +38,6 @@ export const Home = () => {
     );
   };
 
-  console.log(selectedPage);
-
   return (
     <Styled.Container>
       <Menu pages={pages} handleSelectedPage={handleSelectedPage} />
