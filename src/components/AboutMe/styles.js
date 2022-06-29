@@ -4,6 +4,7 @@ export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
   width: 100%;
+  padding-right: 10rem;
   margin: 1rem;
   padding: 0.6rem;
   flex-direction: column;
