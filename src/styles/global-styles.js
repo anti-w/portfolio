@@ -27,6 +27,12 @@ html {
   color: ${({ theme }) => theme.colors.background};
 }
 
+.actualImage {
+  background:  ${({ theme }) => theme.colors.lightBg};
+;
+}
+
+
 
 body {
   background: ${({ theme }) => theme.colors.background};

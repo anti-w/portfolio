@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
-  width: 100%;
+  width: 120.4rem;
   padding-right: 10rem;
   margin: 1rem;
   padding: 0.6rem;
@@ -19,10 +19,10 @@ export const Container = styled.div`
 export const ContainerFlex = styled.div`
   ${({ theme }) => css`
   display: flex;
+  width: 110rem;
+  height: 100%;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   padding: 4.2rem;
   gap: 8rem;
 
@@ -32,9 +32,11 @@ export const ContainerFlex = styled.div`
 export const ResumeContainer = styled.div`
   ${({ theme }) => css`
   display: flex;
+  width: 36rem;
   justify-content: center;
   gap: 8rem;
   padding: 2rem;
+  margin-left: 4rem;
   flex-direction: column;
 
   h1 {

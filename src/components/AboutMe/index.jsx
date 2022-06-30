@@ -1,12 +1,6 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/autoplay';
-
 import TypeAnimation from 'react-type-animation';
+import { ImagesSlider } from '../ImagesSlider';
 import * as Styled from './styles';
-import { SwiperComponent } from '../Swiper';
 
 export const AboutMe = () => {
   return (
@@ -27,7 +21,7 @@ export const AboutMe = () => {
           certo.
         </p>
       </Styled.ResumeContainer>
-      <SwiperComponent />
+      <ImagesSlider />
     </Styled.ContainerFlex>
   );
 };

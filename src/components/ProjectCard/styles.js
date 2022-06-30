@@ -1,16 +1,10 @@
 import styled, { css } from 'styled-components';
-import {
-  Article,
-  Brain,
-  Code,
-  DiamondsFour,
-  GithubLogo,
-  Link,
-} from 'phosphor-react';
+import { Brain, Code, DiamondsFour } from 'phosphor-react';
 
 export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
+  width: 36rem;
   border: 1px solid gray;
   flex-direction: column;
   padding: 2rem 3rem;
@@ -34,7 +28,6 @@ export const Content = styled.div`
   align-items: center;
   padding: 1.4rem;
   border-radius: 13px;
-  width: 26rem;
   color: white;
 
   `}
