@@ -4,8 +4,8 @@ import { Brain, Code, DiamondsFour } from 'phosphor-react';
 export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
-  width: 36rem;
-  border: 1px solid gray;
+  width: 32rem;
+  background: #404040;
   flex-direction: column;
   padding: 2rem 3rem;
   gap: 2rem;

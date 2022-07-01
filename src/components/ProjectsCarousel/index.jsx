@@ -49,7 +49,7 @@ const projectsData = [
 export const ProjectsCarousel = () => {
   return (
     <Swiper
-      style={{ height: '80%', width: '100%' }}
+      style={{ height: '100%', width: '100%' }}
       modules={[Pagination, Navigation]}
       slidesPerView={3}
       spaceBetween={25}

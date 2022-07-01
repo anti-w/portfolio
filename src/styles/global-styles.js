@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 }
 html {
     font-size: 62.5%;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 .selected {
@@ -30,6 +32,21 @@ html {
 .actualImage {
   background:  ${({ theme }) => theme.colors.lightBg};
 ;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  margin-top: 20rem;
+  padding: 0.5rem;
+  width: 4.2rem;
+  height: 4.2rem;
+  background:  ${({ theme }) => theme.colors.lightBg};
+  color: ${({ theme }) => theme.colors.background};
+  border-radius: 100%;
+
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 2.4rem;
 }
 
 
