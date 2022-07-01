@@ -121,10 +121,29 @@ const hardSkills = [
   },
 ];
 
+const tags = [
+  {
+    title: 'Aprenderei',
+    level: 'will learn',
+    isSelected: true,
+  },
+  {
+    title: 'Aprendendo',
+    level: 'learning',
+    isSelected: true,
+  },
+  {
+    title: 'Aprendi',
+    level: 'learned',
+    isSelected: true,
+  },
+];
+
 export const MySkills = () => {
   const [skills, setSkills] = useState({
     softSkills: softSkills,
     hardSkills: hardSkills,
+    tags: tags,
   });
 
   const filterSkillsByLevel = (level) => {
@@ -140,19 +159,22 @@ export const MySkills = () => {
       }
       return skill;
     });
+    const tagsSelected = tags.map((tag) => {
+      if (level === tag.level) {
+        tag.isSelected = !tag.isSelected;
+      }
+      return tag;
+    });
 
     setSkills({
       softSkills: filteredSoftSkills,
       hardSkills: filteredHardSkills,
+      tags: tagsSelected,
     });
   };
 
   return (
     <Styled.Container>
-      <Styled.FilterContainer>
-        <TagsCaption filterSkillsByLevel={filterSkillsByLevel} />
-      </Styled.FilterContainer>
-
       <Styled.CardsContainer>
         <Styled.CardContainer>
           <Styled.TitleWithIcon>
@@ -169,6 +191,9 @@ export const MySkills = () => {
           <Tags skillsData={skills.hardSkills} />
         </Styled.CardContainer>
       </Styled.CardsContainer>
+      <Styled.FilterContainer>
+        <TagsCaption filterSkillsByLevel={filterSkillsByLevel} tags={tags} />
+      </Styled.FilterContainer>
     </Styled.Container>
   );
 };

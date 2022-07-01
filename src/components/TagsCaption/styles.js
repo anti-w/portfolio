@@ -19,8 +19,7 @@ export const Caption = styled.div`
     isSelected &&
     css`
   color: white;
-  border: 1px solid gray;
-  border-radius: 30px;
+
   `
   }
   `}

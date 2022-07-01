@@ -31,14 +31,13 @@ html {
 
 .actualImage {
   background:  ${({ theme }) => theme.colors.lightBg};
-;
 }
 
 .swiper-button-next, .swiper-button-prev {
   margin-top: 20rem;
   padding: 0.5rem;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 3.6rem;
+  height: 3.6rem;
   background:  ${({ theme }) => theme.colors.lightBg};
   color: ${({ theme }) => theme.colors.background};
   border-radius: 100%;
@@ -47,6 +46,7 @@ html {
 
 .swiper-button-next::after, .swiper-button-prev::after {
   font-size: 2.4rem;
+  font-weight: bold;
 }
 
 

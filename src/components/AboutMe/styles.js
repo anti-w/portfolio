@@ -16,15 +16,27 @@ export const Container = styled.div`
   `}
 `;
 
-export const ContainerFlex = styled.div`
+export const All = styled.div`
   ${({ theme }) => css`
   display: flex;
   width: 110rem;
-  height: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 4.2rem;
-  gap: 8rem;
+  flex-direction: column;
+
+ .title {
+    font-size: 3rem;
+    margin: 4rem;
+    padding-top: 2rem;
+  }
+
+  `}
+`;
+
+export const ContainerFlex = styled.div`
+  ${({ theme }) => css`
+  display: flex;
+  gap: 12rem;
 
 
   `}
@@ -34,13 +46,13 @@ export const ResumeContainer = styled.div`
   display: flex;
   width: 36rem;
   justify-content: center;
-  gap: 8rem;
-  padding: 2rem;
   margin-left: 4rem;
   flex-direction: column;
 
   h1 {
     font-size: 3rem;
+    margin-block: 1rem;
+    margin-bottom: 4rem;
   }
 
   p {

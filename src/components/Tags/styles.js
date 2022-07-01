@@ -7,12 +7,13 @@ export const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 1px solid ${theme.colors.lightBg};
-  border-radius: 30px;
+  background: #404040;
+  border-radius: 20px;
   width: 36rem;
   height: 27.5rem;
+  color: #efefef;
 
-  padding: 1rem;
+  padding: 1.4rem;
 
   `}
 `;
