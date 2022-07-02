@@ -34,7 +34,7 @@ const GET_GITHUB_REPOS_DATA = gql`
   `;
 
 export const MyProjects = () => {
-  const { data } = useQuery(GET_GITHUB_REPOS_DATA);
+  const { data, loading } = useQuery(GET_GITHUB_REPOS_DATA);
   console.log(data);
   return (
     <Styled.Container>
