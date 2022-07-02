@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Content } from '../components/Content';
 import { Menu } from '../components/Menu';
 import * as Styled from './styles.js';

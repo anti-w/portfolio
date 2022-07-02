@@ -8,8 +8,11 @@ export const Container = styled.div`
   `}
 `;
 
-export const Caption = styled.div`
+export const Caption = styled.button`
   ${({ theme, isSelected }) => css`
+  background: transparent;
+  color: ${theme.colors.lightBg};
+  border: none;
   display: flex;
   justify-content: center;
   padding: 0.1rem 1rem;
