@@ -1,34 +1,36 @@
-import {
-  Article,
-  Brain,
-  Code,
-  DiamondsFour,
-  GithubLogo,
-  Link,
-} from 'phosphor-react';
+import { Article, GithubLogo, Link } from 'phosphor-react';
 import P from 'prop-types';
 import { useState } from 'react';
 import * as Styled from './styles';
 
-const AboutProject = () => {
+const AboutProject = ({ description }) => {
   return (
     <div>
-      <h1 style={{ fontSize: '14px' }}>
-        Um sistema WEB para usuários que gostariam de buscar informações
-        nutricionais a respeito dos alimentos em âmbito nacional e registrar
-        suas refeições para uma consulta posteriormente, podendo registrar-se e
-        acessar essas informações através de um menu.
-      </h1>
+      <h1 style={{ fontSize: '14px' }}>{description}</h1>
     </div>
   );
 };
-const TopicsProject = () => {
+
+AboutProject.propTypes = {
+  description: P.string.isRequired,
+};
+
+const TopicsProject = ({ topics }) => {
   return (
     <div>
-      <h1>Tópicos do projeto</h1>
+      {topics ? (
+        topics.map(({ node }) => <p key={node.id}>{node.topic.name}</p>)
+      ) : (
+        <h1>No topics</h1>
+      )}
     </div>
   );
 };
+
+TopicsProject.propTypes = {
+  topics: P.array.isRequired,
+};
+
 const LanguagesProject = () => {
   return (
     <div>
@@ -41,7 +43,7 @@ const NavigatorItem = (selectedItem) => {
   return <div></div>;
 };
 
-export const ProjectCard = () => {
+export const ProjectCard = ({ name, url, githubUrl, topics, description }) => {
   const [selectedItem, setSelectedItem] = useState('');
   const handleSelectedItem = (selectedItem) => {
     setSelectedItem(selectedItem);
@@ -50,31 +52,33 @@ export const ProjectCard = () => {
   return (
     <Styled.Container>
       <Styled.Header>
-        <h1>can-eat-web</h1>
+        <h1>{name}</h1>
         <Link size={32} color="#555753" />
         <Article size={32} color="#555753" />
       </Styled.Header>
       <Styled.Navigator>
         <Styled.AboutIcon
           size={32}
-          isSelected={selectedItem === 'about' ? true : false}
+          selected={selectedItem === 'about' ? true : false}
           onClick={() => handleSelectedItem('about')}
         />
         <Styled.LanguagesIcon
           size={32}
-          isSelected={selectedItem === 'languages' ? true : false}
+          selected={selectedItem === 'languages' ? true : false}
           onClick={() => handleSelectedItem('languages')}
         />
         <Styled.TopicsIcon
           size={32}
-          isSelected={selectedItem === 'topics' ? true : false}
+          selected={selectedItem === 'topics' ? true : false}
           onClick={() => handleSelectedItem('topics')}
         />
       </Styled.Navigator>
       <main>
         <Styled.Content>
-          {selectedItem === 'about' && <AboutProject />}
-          {selectedItem === 'topics' && <TopicsProject />}
+          {selectedItem === 'about' && (
+            <AboutProject description={description} />
+          )}
+          {selectedItem === 'topics' && <TopicsProject topics={topics} />}
           {selectedItem === 'languages' && <LanguagesProject />}
         </Styled.Content>
       </main>
@@ -83,4 +87,12 @@ export const ProjectCard = () => {
       </footer>
     </Styled.Container>
   );
+};
+
+ProjectCard.propTypes = {
+  name: P.string.isRequired,
+  url: P.string.isRequired,
+  githubUrl: P.string.isRequired,
+  topics: P.array.isRequired,
+  description: P.string.isRequired,
 };

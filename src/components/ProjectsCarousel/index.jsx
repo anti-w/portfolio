@@ -6,47 +6,57 @@ import 'swiper/css/navigation';
 
 import { Navigation, Pagination } from 'swiper';
 import { ProjectCard } from '../ProjectCard';
+import { gql, useQuery } from '@apollo/client';
 
-const projectsData = [
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-  {
-    slug: 'can-eat-web',
-    about: 'Projeto WEB e tals tal tal tal tal tal e tal',
-    languages: ['Javascript', 'HTML', 'CSS'],
-    topics: ['mongoDB', 'styled-components'],
-  },
-];
+const GET_GITHUB_REPOS_DATA = gql`
+  query {
+  viewer {
+    login
+    repositories(last: 20) {
+      edges {
+        node {
+          id
+          description
+          createdAt
+          homepageUrl
+          name
+          repositoryTopics(last: 10) {
+            edges {
+              node {
+                id
+                topic {
+                  name
+                }
+              }
+            }
+          }
+          updatedAt
+          url
+        }
+      }
+    }
+  }
+}
+  `;
 
 export const ProjectsCarousel = () => {
+  const { data, loading, error } = useQuery(GET_GITHUB_REPOS_DATA, {
+    fetchPolicy: 'network-only',
+  });
+
+  var githubRepos = [];
+
+  if (data === undefined) {
+    return <h1>Undefined</h1>;
+  } else {
+    githubRepos = data.viewer.repositories.edges;
+    console.log(githubRepos);
+  }
+
+  if (loading) {
+    return <h1>Carregando</h1>;
+  }
+
   return (
     <Swiper
       style={{ height: '100%', width: '100%' }}
@@ -58,7 +68,7 @@ export const ProjectsCarousel = () => {
         bulletActiveClass: 'actualImage',
       }}
     >
-      {projectsData.map((project) => (
+      {githubRepos.map(({ node }) => (
         <SwiperSlide
           style={{
             display: 'flex',
@@ -66,9 +76,18 @@ export const ProjectsCarousel = () => {
             alignItems: 'center',
             gap: '1rem',
           }}
-          key={project.slug}
+          key={node.id}
         >
-          <ProjectCard key={project.slug} />
+          <ProjectCard
+            key={node.id}
+            name={node.name}
+            url={node.homepageUrl ? node.homepageUrl : 'sla'}
+            githubUrl={node.url}
+            // notionUrl={}
+            description={node.description}
+            topics={node.repositoryTopics.edges}
+            // languages={}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

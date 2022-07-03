@@ -54,7 +54,7 @@ export const Header = styled.header`
 `;
 
 export const AboutIcon = styled(DiamondsFour)`
-  ${({ isSelected, theme }) => css`
+  ${({ selected, theme }) => css`
 
   color: ${theme.colors.lightBg};
   padding: 0.2rem;
@@ -63,7 +63,7 @@ export const AboutIcon = styled(DiamondsFour)`
 
 
   ${
-    isSelected &&
+    selected &&
     css`
     color: white;
     background: ${theme.colors.lightBg};
@@ -73,7 +73,7 @@ export const AboutIcon = styled(DiamondsFour)`
   `}
 `;
 export const LanguagesIcon = styled(Code)`
-  ${({ isSelected, theme }) => css`
+  ${({ selected, theme }) => css`
 
   color: ${theme.colors.lightBg};
   padding: 0.2rem;
@@ -81,7 +81,7 @@ export const LanguagesIcon = styled(Code)`
     cursor: pointer;
 
   ${
-    isSelected &&
+    selected &&
     css`
     color: white;
     background: ${theme.colors.lightBg};
@@ -91,7 +91,7 @@ export const LanguagesIcon = styled(Code)`
   `}
 `;
 export const TopicsIcon = styled(Brain)`
-  ${({ isSelected, theme }) => css`
+  ${({ selected, theme }) => css`
 
   color: ${theme.colors.lightBg};
   padding: 0.2rem;
@@ -101,7 +101,7 @@ export const TopicsIcon = styled(Brain)`
 
 
   ${
-    isSelected &&
+    selected &&
     css`
     color: white;
     background: ${theme.colors.lightBg};
