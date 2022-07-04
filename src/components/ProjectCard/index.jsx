@@ -16,34 +16,33 @@ AboutProject.propTypes = {
 };
 
 const TopicsProject = ({ topics }) => {
-  return (
-    <div>
-      {topics ? (
-        topics.map(({ node }) => <p key={node.id}>{node.topic.name}</p>)
-      ) : (
-        <h1>No topics</h1>
-      )}
-    </div>
-  );
+  return topics.map(({ node }) => <p key={node.id}>{node.topic.name}</p>);
 };
 
 TopicsProject.propTypes = {
   topics: P.array.isRequired,
 };
 
-const LanguagesProject = () => {
-  return (
-    <div>
-      <h1>Linguagens do projeto</h1>
-    </div>
-  );
+const LanguagesProject = ({ languages }) => {
+  return languages.map((lang) => (
+    <p style={{ background: lang.color }} key={lang.id}>
+      {lang.name}
+    </p>
+  ));
 };
 
-const NavigatorItem = (selectedItem) => {
-  return <div></div>;
+LanguagesProject.propTypes = {
+  languages: P.array.isRequired,
 };
 
-export const ProjectCard = ({ name, url, githubUrl, topics, description }) => {
+export const ProjectCard = ({
+  name,
+  url,
+  githubUrl,
+  topics,
+  description,
+  languages,
+}) => {
   const [selectedItem, setSelectedItem] = useState('');
   const handleSelectedItem = (selectedItem) => {
     setSelectedItem(selectedItem);
@@ -52,9 +51,7 @@ export const ProjectCard = ({ name, url, githubUrl, topics, description }) => {
   return (
     <Styled.Container>
       <Styled.Header>
-        <h1>{name}</h1>
-        <Link size={32} color="#555753" />
-        <Article size={32} color="#555753" />
+        <Styled.ProjectTitle>{name}</Styled.ProjectTitle>
       </Styled.Header>
       <Styled.Navigator>
         <Styled.AboutIcon
@@ -79,11 +76,22 @@ export const ProjectCard = ({ name, url, githubUrl, topics, description }) => {
             <AboutProject description={description} />
           )}
           {selectedItem === 'topics' && <TopicsProject topics={topics} />}
-          {selectedItem === 'languages' && <LanguagesProject />}
+          {selectedItem === 'languages' && (
+            <LanguagesProject languages={languages} />
+          )}
         </Styled.Content>
       </main>
       <footer>
-        <GithubLogo size={32} color="#555753" />
+        <a href={githubUrl} target="_blank" rel="noreferrer">
+          <GithubLogo size={32} />
+        </a>
+
+        <a href={url} target="_blank" rel="noreferrer">
+          <Link size={32} />
+        </a>
+        <a>
+          <Article size={32} />
+        </a>
       </footer>
     </Styled.Container>
   );
@@ -94,5 +102,6 @@ ProjectCard.propTypes = {
   url: P.string.isRequired,
   githubUrl: P.string.isRequired,
   topics: P.array.isRequired,
+  languages: P.array.isRequired,
   description: P.string.isRequired,
 };

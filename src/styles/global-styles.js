@@ -13,6 +13,13 @@ html {
     scroll-behavior: smooth;
 }
 
+
+body {
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.fonts.family.header};
+}
+
 .selected {
   background: ${({ theme }) => theme.colors.background};
   color: white;
@@ -34,6 +41,9 @@ html {
 }
 
 .swiper-button-next, .swiper-button-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 20rem;
   padding: 0.5rem;
   width: 3.6rem;
@@ -45,17 +55,14 @@ html {
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
-
-
-body {
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.primary};
-  font-family: ${({ theme }) => theme.fonts.family.header};
+.swiper-pagination-bullet-active {
+     background-color: ${({ theme }) => theme.colors.lightBg};
 }
+
 
 
 `;

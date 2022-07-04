@@ -12,7 +12,7 @@ const GET_GITHUB_REPOS_DATA = gql`
   query {
   viewer {
     login
-    repositories(last: 20) {
+    repositories(first: 20) {
       edges {
         node {
           id
@@ -23,7 +23,6 @@ const GET_GITHUB_REPOS_DATA = gql`
           repositoryTopics(last: 10) {
             edges {
               node {
-                id
                 topic {
                   name
                 }
@@ -32,6 +31,13 @@ const GET_GITHUB_REPOS_DATA = gql`
           }
           updatedAt
           url
+          languages(first: 10) {
+            nodes {
+              name
+              id
+              color
+            }
+          }
         }
       }
     }
@@ -50,7 +56,6 @@ export const ProjectsCarousel = () => {
     return <h1>Undefined</h1>;
   } else {
     githubRepos = data.viewer.repositories.edges;
-    console.log(githubRepos);
   }
 
   if (loading) {
@@ -65,7 +70,8 @@ export const ProjectsCarousel = () => {
       spaceBetween={25}
       navigation
       pagination={{
-        bulletActiveClass: 'actualImage',
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
       }}
     >
       {githubRepos.map(({ node }) => (
@@ -86,7 +92,7 @@ export const ProjectsCarousel = () => {
             // notionUrl={}
             description={node.description}
             topics={node.repositoryTopics.edges}
-            // languages={}
+            languages={node.languages.nodes}
           />
         </SwiperSlide>
       ))}
