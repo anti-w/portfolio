@@ -43,7 +43,7 @@ export const ProjectCard = ({
   description,
   languages,
 }) => {
-  const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState('about');
   const handleSelectedItem = (selectedItem) => {
     setSelectedItem(selectedItem);
   };
@@ -85,13 +85,7 @@ export const ProjectCard = ({
         <a href={githubUrl} target="_blank" rel="noreferrer">
           <GithubLogo size={32} />
         </a>
-
-        <a href={url} target="_blank" rel="noreferrer">
-          <Link size={32} />
-        </a>
-        <a>
-          <Article size={32} />
-        </a>
+        {url && <Styled.ViewDemo>View demo</Styled.ViewDemo>}
       </footer>
     </Styled.Container>
   );
@@ -100,7 +94,7 @@ export const ProjectCard = ({
 ProjectCard.propTypes = {
   name: P.string.isRequired,
   url: P.string.isRequired,
-  githubUrl: P.string.isRequired,
+  githubUrl: P.string,
   topics: P.array.isRequired,
   languages: P.array.isRequired,
   description: P.string.isRequired,

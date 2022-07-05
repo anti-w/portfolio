@@ -12,7 +12,7 @@ const GET_GITHUB_REPOS_DATA = gql`
   query {
   viewer {
     login
-    repositories(first: 20) {
+    repositories(last: 20) {
       edges {
         node {
           id
@@ -53,7 +53,7 @@ export const ProjectsCarousel = () => {
   var githubRepos = [];
 
   if (data === undefined) {
-    return <h1>Undefined</h1>;
+    return <h1>Carregando...</h1>;
   } else {
     githubRepos = data.viewer.repositories.edges;
   }
@@ -87,7 +87,7 @@ export const ProjectsCarousel = () => {
           <ProjectCard
             key={node.id}
             name={node.name}
-            url={node.homepageUrl ? node.homepageUrl : 'sla'}
+            url={node.homepageUrl}
             githubUrl={node.url}
             // notionUrl={}
             description={node.description}

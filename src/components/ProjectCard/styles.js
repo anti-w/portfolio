@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Article, Brain, Code } from 'phosphor-react';
+import { Article, Atom, Code } from 'phosphor-react';
 
 export const Container = styled.div`
   ${({ theme }) => css`
@@ -9,7 +9,6 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 2rem;
   gap: 2rem;
-  padding-bottom: 0.5rem;
   justify-content: center;
   align-items: center;
   border-radius: 13px;
@@ -76,7 +75,28 @@ export const Header = styled.header`
 
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  align-items: center;
+  gap: 1rem;
+
+  `}
+`;
+
+export const ViewDemo = styled.a`
+  ${({ theme }) => css`
+
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 1px solid gray;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+
+
+
+  &:hover {
+      border: 1px solid white;
+
+  }
 
   `}
 `;
@@ -141,7 +161,7 @@ export const LanguagesIcon = styled(Code)`
 
   `}
 `;
-export const TopicsIcon = styled(Brain)`
+export const TopicsIcon = styled(Atom)`
   ${({ selected, theme }) => css`
 
   color: ${theme.colors.lightBg};
