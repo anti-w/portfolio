@@ -6,7 +6,7 @@ import * as Styled from './styles';
 const AboutProject = ({ description }) => {
   return (
     <div>
-      <h1 style={{ fontSize: '14px' }}>{description}</h1>
+      <h2 style={{ fontSize: '14px' }}>{description}</h2>
     </div>
   );
 };

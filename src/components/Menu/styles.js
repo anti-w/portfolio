@@ -12,7 +12,8 @@ export const Container = styled.div`
   align-items: center;
   box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
   border-radius: 10px;
-  background: ${theme.colors.lightBg}; }
+  background: ${theme.colors.menu.background};
+  color: ${theme.colors.menu.primary};
 
   img {
     width: 6.2rem;
@@ -20,7 +21,6 @@ export const Container = styled.div`
 
   h1 {
     font-size: 1.6rem;
-    color: ${theme.colors.background}
   }
 
   header {
@@ -53,27 +53,23 @@ export const SocialIconsContainer = styled.div`
   margin-top: 5rem;
   margin-bottom: 5rem;
   gap: 2rem;
+  color: ${theme.colors.menu.bacground};
 
 
 
   a {
-    background: ${theme.colors.lightBg};
     border-radius: 10px;
     padding: 0.3rem;
     cursor: pointer;
-
-    svg {
-      color: ${theme.colors.background};
-    }
   }
 
 
 
   a:hover {
-    background: ${theme.colors.background};
+    background: ${theme.colors.menu.primary};
 
     svg {
-      color: white;
+      color: ${theme.colors.menu.background};
     }
   }
 

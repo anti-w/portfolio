@@ -21,19 +21,18 @@ body {
 }
 
 .selected {
-  background: ${({ theme }) => theme.colors.background};
-  color: white;
+  background: ${({ theme }) => theme.colors.menu.selected.background};
+  color: ${({ theme }) => theme.colors.menu.selected.primary};
 }
 
 .selected::after {
   content: '-';
   display: flex;
   position: absolute;
-
   left: 19.1rem;
   width: 4.2rem;
-  background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.menu.selected.background};
+  color: ${({ theme }) => theme.colors.menu.selected.background};
 }
 
 .actualImage {

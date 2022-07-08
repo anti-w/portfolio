@@ -1,9 +1,11 @@
+import P from 'prop-types';
+import * as Styled from './styles.js';
 import { useState } from 'react';
+
 import { Content } from '../components/Content';
 import { Menu } from '../components/Menu';
-import * as Styled from './styles.js';
 
-export const Home = () => {
+export const Home = ({ theme, toggleTheme }) => {
   const [pages, setPages] = useState([
     {
       title: 'Sobre mim',
@@ -40,8 +42,18 @@ export const Home = () => {
 
   return (
     <Styled.Container>
-      <Menu pages={pages} handleSelectedPage={handleSelectedPage} />
+      <Menu
+        pages={pages}
+        handleSelectedPage={handleSelectedPage}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
       <Content selectedPage={selectedPage} />
     </Styled.Container>
   );
+};
+
+Home.propTypes = {
+  theme: P.string.isRequired,
+  toggleTheme: P.func.isRequired,
 };

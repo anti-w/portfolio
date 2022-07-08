@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
   box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
   border-radius: 15px;
-  background: ${theme.colors.background};
+  background: ${theme.colors.menu.primary};
   `}
 `;
 
@@ -34,10 +34,14 @@ export const ResumeContainer = styled.div`
   margin-left: 4rem;
   flex-direction: column;
   text-align: center;
+  color: ${theme.colors.menu.background};
 
   h1 {
     font-size: 3rem;
     color: white;
+    text-align: right;
+    color: ${theme.colors.menu.selected.primary};
+
 
 
   }
@@ -46,7 +50,9 @@ export const ResumeContainer = styled.div`
     font-size: 2.2rem;
     margin-block: 1rem;
     margin-bottom: 4rem;
-    text-align: center;
+    text-align: right;
+    color: ${theme.colors.menu.selected.primary};
+
   }
 
   p {

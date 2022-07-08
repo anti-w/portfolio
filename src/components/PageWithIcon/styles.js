@@ -7,7 +7,7 @@ export const TitleAndIcon = styled.button`
 
     display: flex;
     width: 16.4rem;
-    color: ${theme.colors.background};
+    color: ${theme.colors.menu.primary};
     background: transparent;
     justify-content: center;
     align-items: center;
@@ -30,8 +30,8 @@ export const TitleAndIcon = styled.button`
     }
 
   :hover {
-    background: ${theme.colors.background};
-    color: white;
+    background: ${theme.colors.menu.primary};
+    color: ${theme.colors.menu.background};
     transition: ease-in-out 500ms
   }
 

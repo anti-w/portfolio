@@ -8,7 +8,7 @@ export const Container = styled.div`
     flex-direction: row;
     width: 100vw;
     height: 100vh;
-    background:  ${theme.colors.lightBg};
+    background:  ${theme.colors.menu.background};
     overflow: hidden;
   `}
 `;

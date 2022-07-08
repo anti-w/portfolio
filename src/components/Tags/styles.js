@@ -11,7 +11,7 @@ export const Container = styled.div`
   border-radius: 20px;
   width: 36rem;
   height: 27.5rem;
-  color: #efefef;
+  color: white;
 
   padding: 1.4rem;
 

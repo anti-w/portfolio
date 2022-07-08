@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Caption = styled.button`
   ${({ theme, isSelected }) => css`
   background: transparent;
-  color: ${theme.colors.lightBg};
+  color: ${theme.colors.menu.background};
   border: none;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ export const Caption = styled.button`
   ${
     isSelected &&
     css`
-  color: white;
+  color: ${theme.colors.menu.selected.primary};
 
   `
   }

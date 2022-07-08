@@ -25,12 +25,10 @@ export const Container = styled.div`
     width: 100%;
 
     a {
-      color: ${theme.colors.lightBg};
+      color: white;
       cursor: pointer;
     }
-    a:hover {
-      color: white;
-    }
+
   }
 
 
@@ -85,16 +83,15 @@ export const ViewDemo = styled.a`
   ${({ theme }) => css`
 
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   border: 1px solid gray;
-  padding: 1rem;
+  padding: 0.8rem;
   text-align: center;
-  border-radius: 5px;
-
+  border-radius: 8px;
 
 
   &:hover {
-      border: 1px solid white;
+      border-color: white
 
   }
 
@@ -127,10 +124,11 @@ export const ProjectTitle = styled.h1`
 export const AboutIcon = styled(Article)`
   ${({ selected, theme }) => css`
 
-  color: ${theme.colors.lightBg};
   padding: 0.2rem;
   border-radius: 30%;
   cursor: pointer;
+  color: ${theme.colors.lightBg};
+
 
 
   ${
