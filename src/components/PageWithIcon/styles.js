@@ -3,8 +3,6 @@ import styled, { css } from 'styled-components';
 export const TitleAndIcon = styled.button`
   ${({ theme, selected }) => css`
 
-
-
     display: flex;
     width: 16.4rem;
     color: ${theme.colors.menu.primary};
@@ -18,15 +16,20 @@ export const TitleAndIcon = styled.button`
     border: 1px solid gray;
     border-radius: 10px;
 
-    img {
-      width: 3.5rem;
-
-    }
-
     h2 {
       text-align: left;
       width: 8rem;
       margin-left: 2rem;
+    }
+
+    @media ${theme.media.lteMedium} {
+
+    width: 7rem;
+    padding: 12px 6px;
+
+      h2 {
+        display: none;
+      }
     }
 
   :hover {

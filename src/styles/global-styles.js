@@ -33,6 +33,10 @@ body {
   width: 4.2rem;
   background: ${({ theme }) => theme.colors.menu.selected.background};
   color: ${({ theme }) => theme.colors.menu.selected.background};
+
+  @media ${({ theme }) => theme.media.lteMedium} {
+    left: 8rem
+  }
 }
 
 .actualImage {

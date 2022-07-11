@@ -33,6 +33,19 @@ export const Container = styled.div`
     align-items: center;
   }
 
+  @media ${theme.media.lteMedium} {
+      width: 9rem;
+
+      header {
+        flex-direction: column;
+        button {
+          margin-top: 1rem;
+        }
+
+      }
+
+  }
+
   `}
 `;
 export const PagesContainer = styled.div`
@@ -55,15 +68,11 @@ export const SocialIconsContainer = styled.div`
   gap: 2rem;
   color: ${theme.colors.menu.bacground};
 
-
-
   a {
     border-radius: 10px;
     padding: 0.3rem;
     cursor: pointer;
   }
-
-
 
   a:hover {
     background: ${theme.colors.menu.primary};
@@ -71,6 +80,12 @@ export const SocialIconsContainer = styled.div`
     svg {
       color: ${theme.colors.menu.background};
     }
+  }
+
+  @media ${theme.media.lteMedium} {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: 1rem;
   }
 
   `}

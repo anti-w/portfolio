@@ -12,6 +12,10 @@ export const fonts = {
   },
 };
 
+export const media = {
+  lteMedium: '(max-width: 768px)',
+};
+
 export const lightTheme = {
   colors: {
     menu: {
@@ -27,6 +31,7 @@ export const lightTheme = {
     lightBg: '#262626',
   },
   fonts: fonts,
+  media: media,
 };
 
 export const darkTheme = {
@@ -44,4 +49,5 @@ export const darkTheme = {
     lightBg: '#262626',
   },
   fonts: fonts,
+  media: media,
 };
