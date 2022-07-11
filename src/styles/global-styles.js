@@ -43,6 +43,36 @@ body {
   background:  ${({ theme }) => theme.colors.lightBg};
 }
 
+.swiper {
+  height: 42rem;
+  width: 42rem;
+
+  @media ${({ theme }) => theme.media.lteMedium} {
+    width: 28rem;
+    height: 34rem;
+  }
+}
+
+.swiper-slide {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 34rem;
+    border-radius: 1rem;
+  }
+
+  @media ${({ theme }) => theme.media.lteMedium} {
+    img {
+      width: 24rem;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+
 .swiper-button-next, .swiper-button-prev {
   display: flex;
   justify-content: center;

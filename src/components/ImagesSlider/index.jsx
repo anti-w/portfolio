@@ -29,8 +29,12 @@ const images = [
     title: 'steam logo',
   },
   {
-    url: 'https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png',
-    title: 'spotify logo',
+    url: 'https://cdn.pixabay.com/photo/2020/07/07/08/49/wolf-5379713_960_720.png',
+    title: 'The Witcher logo',
+  },
+  {
+    url: 'https://logosmarcas.net/wp-content/uploads/2020/05/Skyrim-Logo.png',
+    title: 'Skyrim logo',
   },
   {
     url: 'https://logodownload.org/wp-content/uploads/2018/02/blizzard-logo.png',
@@ -64,10 +68,6 @@ export const ImagesSlider = () => {
   }, []);
   return (
     <Swiper
-      style={{
-        width: '420px',
-        height: '420px',
-      }}
       modules={[Pagination, Autoplay]}
       slidesPerView={1}
       pagination={{
@@ -81,19 +81,8 @@ export const ImagesSlider = () => {
       }}
     >
       {randImg.map((image) => (
-        <SwiperSlide
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-          }}
-          key={image.title + image.url}
-        >
-          <img
-            src={image.url}
-            alt={image.title}
-            style={{ borderRadius: '10px', width: '340px' }}
-          />
+        <SwiperSlide key={image.title + image.url}>
+          <img src={image.url} alt={image.title} />
         </SwiperSlide>
       ))}
     </Swiper>

@@ -12,6 +12,11 @@ export const Container = styled.div`
   box-shadow: 4px 9px 27px -2px rgba(0,0,0,0.54);
   border-radius: 15px;
   background: ${theme.colors.menu.primary};
+
+  @media ${theme.media.lteMedium} {
+    width: 75%;
+    flex-direction: row;
+  }
   `}
 `;
 
@@ -23,6 +28,12 @@ export const ContainerFlex = styled.div`
   align-items: center;
   gap: 12rem;
 
+
+  @media ${theme.media.lteMedium} {
+    flex-direction: column;
+    width: 100%;
+    gap: 0rem;
+  }
 
   `}
 `;
@@ -41,9 +52,6 @@ export const ResumeContainer = styled.div`
     color: white;
     text-align: right;
     color: ${theme.colors.menu.selected.primary};
-
-
-
   }
 
   h2 {
@@ -52,7 +60,6 @@ export const ResumeContainer = styled.div`
     margin-bottom: 4rem;
     text-align: right;
     color: ${theme.colors.menu.selected.primary};
-
   }
 
   p {
@@ -61,6 +68,25 @@ export const ResumeContainer = styled.div`
     font-family: ${theme.fonts.family.description};
     text-align: left;
     font-weight: lighter;
+  }
+
+  @media ${theme.media.lteMedium} {
+    margin-left: 0;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+
+    h1 {
+      font-size: 2.6rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+    }
   }
 
   `}
