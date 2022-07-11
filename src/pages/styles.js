@@ -4,6 +4,8 @@ export const Container = styled.div`
   ${({ theme }) => css`
     padding: 1rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     flex-direction: row;
     width: 100vw;

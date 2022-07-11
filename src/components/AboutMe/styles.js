@@ -4,6 +4,7 @@ export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
   width: 120.4rem;
+  height: 100%;
   margin: 1rem;
   padding: 0.6rem;
   flex-direction: column;
@@ -31,7 +32,6 @@ export const ContainerFlex = styled.div`
 
   @media ${theme.media.lteMedium} {
     flex-direction: column;
-    width: 100%;
     gap: 0rem;
   }
 
