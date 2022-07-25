@@ -3,15 +3,21 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
+  width: 100%;
   justify-content: center;
   gap: 6rem;
+
+  @media ${theme.media.lteMedium} {
+  }
   `}
 `;
 
 export const Caption = styled.button`
   ${({ theme, isSelected }) => css`
+  margin: 0.2rem;
   background: transparent;
   color: ${theme.colors.menu.background};
+  width: 8rem;
   border: none;
   display: flex;
   justify-content: center;
@@ -24,6 +30,11 @@ export const Caption = styled.button`
   color: ${theme.colors.menu.selected.primary};
 
   `
+  }
+
+  @media ${theme.media.lteMedium} {
+      width: 4rem;
+
   }
   `}
 `;

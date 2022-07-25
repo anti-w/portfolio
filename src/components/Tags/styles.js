@@ -9,11 +9,14 @@ export const Container = styled.div`
   align-items: center;
   background: #404040;
   border-radius: 20px;
-  width: 36rem;
-  height: 27.5rem;
+  height: 30rem;
+  padding: 1rem;
+  aspect-ratio: 1.25/1;
   color: white;
 
-  padding: 1.4rem;
+  @media ${theme.media.lteMedium} {
+    height: 22rem;
+  }
 
   `}
 `;

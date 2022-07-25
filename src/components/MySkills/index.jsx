@@ -1,7 +1,5 @@
 import * as Styled from './styles';
 
-import { Brain, TerminalWindow } from 'phosphor-react';
-
 import { Tags } from '../Tags';
 import { TagsCaption } from '../TagsCaption';
 import { useState } from 'react';
@@ -178,14 +176,14 @@ export const MySkills = () => {
       <Styled.CardsContainer>
         <Styled.CardContainer>
           <Styled.TitleWithIcon>
-            <Brain size={64} />
+            <Styled.CustomBrain />
             <h1>Comportamentais</h1>
           </Styled.TitleWithIcon>
           <Tags skillsData={skills.softSkills} />
         </Styled.CardContainer>
         <Styled.CardContainer>
           <Styled.TitleWithIcon>
-            <TerminalWindow size={64} />
+            <Styled.CustomTerminal />
             <h1>Técnicas</h1>
           </Styled.TitleWithIcon>
           <Tags skillsData={skills.hardSkills} />

@@ -1,17 +1,17 @@
 import P from 'prop-types';
+import * as Styled from './styles';
 
 import { AboutMe } from '../AboutMe';
-import { Container } from '../AboutMe/styles';
 import { MyProjects } from '../MyProjects';
 import { MySkills } from '../MySkills';
 
 export const Content = ({ selectedPage }) => {
   return (
-    <Container>
+    <Styled.Container>
       {selectedPage === 'Sobre mim' && <AboutMe />}
       {selectedPage === 'Habilidades' && <MySkills />}
       {selectedPage === 'Projetos' && <MyProjects />}
-    </Container>
+    </Styled.Container>
   );
 };
 

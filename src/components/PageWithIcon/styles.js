@@ -5,7 +5,7 @@ export const TitleAndIcon = styled.button`
 
     display: flex;
     width: 16.4rem;
-    color: ${theme.colors.menu.primary};
+    color: inherit;
     background: transparent;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ export const TitleAndIcon = styled.button`
     font-weight: bold;
     margin-bottom: 1rem;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 15px;
 
     h2 {
       text-align: left;
@@ -24,8 +24,8 @@ export const TitleAndIcon = styled.button`
 
     @media ${theme.media.lteMedium} {
 
-    width: 7rem;
-    padding: 12px 6px;
+    width: 5rem;
+    padding: 0.6rem;
 
       h2 {
         display: none;

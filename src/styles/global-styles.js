@@ -35,7 +35,7 @@ body {
   color: ${({ theme }) => theme.colors.menu.selected.background};
 
   @media ${({ theme }) => theme.media.lteMedium} {
-    left: 8rem
+    left: 7rem
   }
 }
 

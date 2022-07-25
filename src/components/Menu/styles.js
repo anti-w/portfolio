@@ -1,3 +1,4 @@
+import { FinnTheHuman, Rocket } from 'phosphor-react';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
@@ -35,7 +36,11 @@ export const Container = styled.div`
   }
 
   @media ${theme.media.lteMedium} {
-      width: 9rem;
+      width: 8rem;
+
+      img{
+        width: 5rem;
+      }
 
       header {
         flex-direction: column;
@@ -89,5 +94,44 @@ export const SocialIconsContainer = styled.div`
     gap: 1rem;
   }
 
+  `}
+`;
+
+export const CustomFinn = styled(FinnTheHuman)`
+  ${({ theme }) => css`
+
+    width: 2.8rem;
+    height: 2.8rem;
+
+    @media ${theme.media.lteMedium} {
+      width: 1.8rem;
+    height: 1.8rem;
+    }
+  `}
+`;
+
+export const CustomSkills = styled(FinnTheHuman)`
+  ${({ theme }) => css`
+
+    width: 2.8rem;
+    height: 2.8rem;
+
+    @media ${theme.media.lteMedium} {
+      width: 1.8rem;
+    height: 1.8rem;
+    }
+  `}
+`;
+
+export const CustomRocket = styled(Rocket)`
+  ${({ theme }) => css`
+
+    width: 2.8rem;
+    height: 2.8rem;
+
+    @media ${theme.media.lteMedium} {
+      width: 1.8rem;
+    height: 1.8rem;
+    }
   `}
 `;
