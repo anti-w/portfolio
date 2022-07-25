@@ -20,6 +20,10 @@ body {
   font-family: ${({ theme }) => theme.fonts.family.header};
 }
 
+a:visited {
+  color: inherit;
+}
+
 .selected {
   background: ${({ theme }) => theme.colors.menu.selected.background};
   color: ${({ theme }) => theme.colors.menu.selected.primary};
@@ -39,9 +43,6 @@ body {
   }
 }
 
-.actualImage {
-  background:  ${({ theme }) => theme.colors.lightBg};
-}
 
 .swiper {
   height: 42rem;
@@ -81,19 +82,19 @@ body {
   padding: 0.5rem;
   width: 3.6rem;
   height: 3.6rem;
-  background:  ${({ theme }) => theme.colors.lightBg};
-  color: ${({ theme }) => theme.colors.background};
+  background:  ${({ theme }) => theme.colors.menu.background};
+  color: ${({ theme }) => theme.colors.menu.primary};
   border-radius: 100%;
 
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 .swiper-pagination-bullet-active {
-     background-color: ${({ theme }) => theme.colors.lightBg};
+     background-color: ${({ theme }) => theme.colors.menu.background};
 }
 
 

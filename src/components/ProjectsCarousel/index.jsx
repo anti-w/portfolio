@@ -1,5 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import * as Styled from './styles';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -63,39 +65,39 @@ export const ProjectsCarousel = () => {
   }
 
   return (
-    <Swiper
-      style={{ height: '100%', width: '100%' }}
-      modules={[Pagination, Navigation]}
-      slidesPerView={3}
-      spaceBetween={25}
-      navigation
-      pagination={{
-        dynamicBullets: true,
-        dynamicMainBullets: 3,
-      }}
-    >
-      {githubRepos.map(({ node }) => (
-        <SwiperSlide
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '1rem',
-          }}
-          key={node.id}
-        >
-          <ProjectCard
-            key={node.id}
-            name={node.name}
-            url={node.homepageUrl}
-            githubUrl={node.url}
-            // notionUrl={}
-            description={node.description}
-            topics={node.repositoryTopics.edges}
-            languages={node.languages.nodes}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <Styled.Container>
+      <Swiper
+        className="swiper-custom"
+        breakpoints={{
+          768: {
+            slidesPerView: 1,
+          },
+
+          1080: {
+            slidesPerView: 3,
+          },
+        }}
+        modules={[Pagination, Navigation]}
+        navigation
+        pagination={{
+          dynamicBullets: true,
+          dynamicMainBullets: 3,
+        }}
+      >
+        {githubRepos.map(({ node }) => (
+          <SwiperSlide key={node.id}>
+            <ProjectCard
+              key={node.id}
+              name={node.name}
+              url={node.homepageUrl}
+              githubUrl={node.url}
+              description={node.description}
+              topics={node.repositoryTopics.edges}
+              languages={node.languages.nodes}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Styled.Container>
   );
 };

@@ -1,4 +1,4 @@
-import { Article, GithubLogo, Link } from 'phosphor-react';
+import { GithubLogo } from 'phosphor-react';
 import P from 'prop-types';
 import { useState } from 'react';
 import * as Styled from './styles';
@@ -85,7 +85,11 @@ export const ProjectCard = ({
         <a href={githubUrl} target="_blank" rel="noreferrer">
           <GithubLogo size={32} />
         </a>
-        {url && <Styled.ViewDemo>View demo</Styled.ViewDemo>}
+        {url && (
+          <Styled.ViewDemo href={url} target="_blank" rel="noreferrer">
+            View demo
+          </Styled.ViewDemo>
+        )}
       </footer>
     </Styled.Container>
   );

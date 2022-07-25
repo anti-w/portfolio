@@ -8,10 +8,16 @@ export const Container = styled.div`
   height: 100%;
   width: 100%;
   padding: 1rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   color: ${theme.colors.menu.selected.primary};
+
+    @media ${theme.media.lteMedium} {
+    flex-direction: column;
+  }
+
+
   `}
 `;
 
@@ -25,8 +31,9 @@ export const CardsContainer = styled.div`
   gap: 6rem;
 
   @media ${theme.media.lteMedium} {
+    justify-content: flex-start;
     flex-direction: column;
-    gap: 1rem;
+    gap: 3rem;
   }
 
 

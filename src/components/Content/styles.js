@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme }) => css`
   display: flex;
-  width: 120.4rem;
+  width: 100%;
   height: 100%;
   margin: 1rem;
   padding: 0.6rem;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   background: ${theme.colors.menu.primary};
 
   @media ${theme.media.lteMedium} {
-    width: 100%;
+
     flex-direction: row;
   }
   `}

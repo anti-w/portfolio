@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: center;
   gap: 6rem;
 
+
   @media ${theme.media.lteMedium} {
   }
   `}
@@ -17,6 +18,7 @@ export const Caption = styled.button`
   margin: 0.2rem;
   background: transparent;
   color: ${theme.colors.menu.background};
+  font-family: ${theme.fonts.family.header};
   width: 8rem;
   border: none;
   display: flex;

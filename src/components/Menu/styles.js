@@ -78,6 +78,7 @@ export const SocialIconsContainer = styled.div`
     border-radius: 10px;
     padding: 0.3rem;
     cursor: pointer;
+
   }
 
   a:hover {

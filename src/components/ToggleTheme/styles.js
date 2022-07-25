@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 export const ToggleTheme = styled.button`
   ${({ theme }) => css`
 
+  cursor: pointer;
   background: transparent;
   aspect-ratio: 1/1;
   border: none;

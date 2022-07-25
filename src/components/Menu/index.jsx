@@ -31,10 +31,14 @@ export const Menu = ({ pages, handleSelectedPage, theme, toggleTheme }) => {
       </nav>
       <footer>
         <Styled.SocialIconsContainer>
-          <a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/anti-w/"
+            rel="noreferrer"
+          >
             <LinkedinLogo size={42} />
           </a>
-          <a>
+          <a target="_blank" href="https://github.com/anti-w" rel="noreferrer">
             <GithubLogo size={42} />
           </a>
         </Styled.SocialIconsContainer>
